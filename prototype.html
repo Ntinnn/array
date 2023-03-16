@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function book(title,author){
+            this.title = title;
+            this.author = author;
+        }
+
+        var myBook = new book ("Java Script", "Mohtashim")
+        book.prototype.price = null;
+        myBook.price = 100;
+
+        document.writeln(`Book TItle adalah : ${myBook.title} <br>`);
+        document.writeln(`Book TItle adalah : ${myBook.author} <br>`);
+        document.writeln(`Book TItle adalah : ${myBook.price} <br>`)
+    </script>
+</body>
+</html>
