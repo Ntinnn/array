@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // Metode ini filter()membuat larik baru yang diisi dengan elemen yang lolos uji yang disediakan oleh suatu fungsi.
+        // Metode filter()tidak menjalankan fungsi untuk elemen kosong.
+        // Metode ini filter()tidak mengubah array asli.
+        const ages = [32, 33, 16, 40];
+        document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+        function checkAdult(age) {
+        return age >= 18;
+        }
+    </script>
+    <br>
+    <script>
+        // join() berfungsi untuk menggabungkan elemen array menjadi sebuah string.
+        var arr1 = [1,2,3,4,5,"a","b","c","d","e"];
+        document.writeln(arr1.join());         //hasil: 1,2,3,4,5,a,b,c,d,e
+        document.writeln(arr1.join("."));      //hasil: 1.2.3.4.5.a.b.c.d.e
+        document.writeln(arr1.join("|"));      //hasil: 1|2|3|4|5|a|b|c|d|e
+        document.writeln(arr1.join("_"));      //hasil: 1_2_3_4_5_a_b_c_d_e
+        "<br>"
+    </script>
+    <br>
+    <p id="demo1"></p>
+    <script>
+        // Metode forEach()memanggil fungsi untuk setiap elemen dalam array.
+        // Metode ini forEach()tidak dijalankan untuk elemen kosong.
+        let text = "";
+        const fruits = ["apple", "orange", "cherry"];
+        fruits.forEach(myFunction);
+        document.getElementById("demo1").innerHTML = text;
+        function myFunction(item, index) {
+        text += index + ": " + item + "<br>"; 
+        }
+    </script>
+    <br>
+    <p id="demo2"></p>
+    <script>
+        // map()membuat array baru dari memanggil fungsi untuk setiap elemen array.
+        const numbers = [65, 44, 12, 4];
+        const newArr = numbers.map(myFunction);
+        document.getElementById("demo2").innerHTML = newArr;
+        function myFunction(num) {
+        return num * 10;
+        }
+    </script>
+    <br>
+    <p id="demo3"></p>
+    <script>
+        // pop()mengembalikan elemen yang dihapusnya
+        const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+        document.writeln(plants.pop(),"<br>");
+        document.writeln(plants,"<br>");
+        plants.pop();
+        document.writeln(plants,"<br>");
+    </script>
+    <br>
+    <!-- Metode push() menambahkan satu atau beberapa elemen ke akhir array dan mengembalikan panjang baru array. -->
+    <script>
+        const animals = ['pigs', 'goats', 'sheep'];
+        const count = animals.push('cows');
+        document.writeln(count,"<br>");
+        document.writeln(animals,"<br>");
+        animals.push('chickens', 'cats', 'dogs');
+        document.writeln(animals,"<br>");
+    </script>
+    <br>
+    <!-- Metode sort() mengurutkan elemen array di tempat dan mengembalikan referensi ke array yang sama -->
+    <script>
+        const months = ['March', 'Jan', 'Feb', 'Dec'];
+        months.sort();
+        document.writeln(months,"<br>")
+        const array1 = [1, 30, 4, 21, 100000];
+        array1.sort();
+        document.writeln(array1,"<br>");
+    </script>
+    <br>
+    <!-- for in kombo mengulangi (loop) di atas properti objek. -->
+    <script>
+        const car = { make: 'Honda', model: 'Accord', year: 1998 };
+        document.writeln('make' in car);
+        delete car.make;
+        if ('make' in car === false) {
+        car.make = 'Suzuki';
+        }
+        document.writeln(car.make);
+    </script>
+    <br>
+    <br>
+    <!-- Metode statis Array.of() membuat instans Array baru dari sejumlah variabel argumen, terlepas dari jumlah atau jenis argumen. -->
+    <script>
+        document.writeln(Array.of('foo', 2, 'bar', true));
+        document.writeln(Array.of());
+    </script>
+</body>
+</html>
